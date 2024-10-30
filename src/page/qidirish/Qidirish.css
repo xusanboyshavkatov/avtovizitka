@@ -1,0 +1,81 @@
+.Qidirish_wrap{
+    width: 425px;
+    height: 100vh;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Qidirish_wrap h1{
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.Qidirish_form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Qidirish_form input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+.Qidirish_form button{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #0098FF;
+}
+.Qidirish_wrap h2{
+    font-size: 18px;
+    font-weight: 400;
+}
+.Qidirish_getdata {
+    margin-top: 20;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    /* align-items: center; */
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+.Qidirish_wrap a{
+    text-decoration: none;
+}
+.Qidirish_getdata_data{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+.callicon{
+    width: 50px;
+}
+.Qidirish_getdata_data_info{
+    display: flex;
+    gap: 10px;
+}
+.telefonraqam{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 376px){
+    .Qidirish_wrap{
+        width: 100%;
+    }
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+.Royhatdan_otish_wrap{
+    width: 425px;
+    height: 100vh;
+    background-color: #FDFDFD;
+    box-sizing: border-box;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap:50px ;
+}
+.Royhatdan_otish_title h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+.Royhatdan_otish_title h2{
+    font-size: 26px;
+    font-weight: 400;
+}
+.Royhatdan_otish_input{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+.Royhatdan_otish_input input{
+    width: 100%;
+    height: auto;
+    padding: 18px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid black ;
+    font-size: 20px;
+    font-weight: 400;
+}
+.Royhatdan_otish_input  button{
+    width: 100%;
+    height: auto;
+    padding: 18px 0px;
+    background-color: #0098FF;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+    border: none;
+}
+@media screen and (max-width: 376px){
+    .Royhatdan_otish_wrap{
+        width: 100%;
+    }
+}
