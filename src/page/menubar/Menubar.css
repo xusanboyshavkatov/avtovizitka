@@ -4,17 +4,22 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    background-color: #EFEFEF;
+    /* background-color: #EFEFEF; */
     box-sizing: border-box;
-    padding: 20px;
+    padding-bottom: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
 }
 .Menubar img{
-    width:40px ;
+    width:60px ;
+    border-radius: 50px;
+}
+
+.backicon{
+    width: 20px;
 }
 /* .Menubar .scanimg{
     width: 60px;

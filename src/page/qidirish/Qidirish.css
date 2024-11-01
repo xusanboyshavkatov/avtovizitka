@@ -49,13 +49,14 @@
     margin-top: 20;
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    /* align-items: center; */
+    gap: 15px;
+    align-items: center;
     padding-bottom: 5px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #EFEFEF;
 }
 .Qidirish_wrap a{
     text-decoration: none;
+    color: #0098FF;
 }
 .Qidirish_getdata_data{
     display: flex;
@@ -63,15 +64,12 @@
     /* gap: 10px; */
 }
 .callicon{
-    width: 50px;
+    width: 60px;
 }
-.Qidirish_getdata_data_info{
-    display: flex;
-    gap: 10px;
-}
+
 .telefonraqam{
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 26px;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 376px){

@@ -12,6 +12,11 @@ const Kirish = () => {
     const navigate = useNavigate();
 
     const handleLogin = async () => {
+        if (!telefon_raqam || !password ) {
+            alert("Iltimos, barcha maydonlarni to'ldiring!");
+            return;
+        }
+
         const { data, error } = await supabase
             .from('database')
             .select('*')
@@ -21,6 +26,8 @@ const Kirish = () => {
 
         if (error) {
             console.error('Xato:', error);
+            alert("Bunday foydalanuvchi bazada mavjud emas yoki parolingiz xato, tekshirib qayta urunib ko'ring");
+            return;
         } else {
             console.log('Foydalanuvchi ma\'lumoti:', data);
             // Foydalanuvchi `id`si bilan `Home` sahifasiga yo'naltirish

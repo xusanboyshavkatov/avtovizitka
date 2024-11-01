@@ -8,62 +8,36 @@
     padding: 0px 20px;
     position: relative;
 }
-.Carimg{
-    width: 100%;
-    margin-bottom: 20px;
+.Hisob_wrap p{
+    font-size: 24px;
+    font-weight: 400;
 }
-.avto_raqam{
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #0098FF;
+.Car_info{
     display: flex;
     flex-direction: row;
-    gap: 20px;
     align-items: center;
+    gap: 10px;
 }
+.Car_info img{
+    width: 60px;
+}
+.Car_info_data h2{
+    color: #0098FF;
+    font-size: 26px;
+    font-weight: 500;
+}
+.Car_info_data p{
+    color: #282828;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .Hisob_wrap h1{
     font-size: 24px;
     font-weight: 600;
     color: white;
 }
-.avto_raqam img{
-    width: 90px;
-}
 
-
-.telefon_raqam{
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #0098FF;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-}
-.telefon_raqam img{
-    width: 35px;
-}
-.username{
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #0098FF;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-}
-.username img{
-    width: 25px;
-}
 
 @media screen and (max-width: 376px){
     .Hisob_wrap{

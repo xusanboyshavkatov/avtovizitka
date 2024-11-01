@@ -2,7 +2,9 @@ import {React, useState} from 'react'
 import { supabase } from '../../supabaseClient'
 import './Qidirish.css'
 import Menubar from '../menubar/Menubar'
-import callicon from '../../media/call.png'
+import qidirish_map_icon from '../../media/qidirish_map_icon.png'
+import backicon from '../../media/backicon.png'
+import { NavLink } from 'react-router-dom'
 
 const Qidirish = () => {
     const [findavto_raqam, setfindavto_raqam] = useState("")
@@ -33,7 +35,8 @@ const Qidirish = () => {
   return (
     <div className='Qidirish_wrap'>
         <Menubar></Menubar>
-        <h1>Avtomobil malumotlarini qidirish</h1>
+        <NavLink to={"/Kirishhisob"}> <img src={backicon} alt={backicon} loading='lazy' className='backicon'/> </NavLink>
+        <h1>Avtomobil ma'  nblumotlarini qidirish</h1>
         <div className="Qidirish_form">
             <input type="text" placeholder='Avto raqam kiriting: 60F830TA'
             value={findavto_raqam}
@@ -43,13 +46,10 @@ const Qidirish = () => {
         </div>
         {findopen ? 
         <div className="Qidirish_getdata">
-             <a href={`tel:${userData.telefon_raqam}`} type='tel'> <img src={callicon} alt={callicon} loading='lazy' className='callicon' /></a>
+             <a href={userData.telefon_raqam} type='tel'> <img src={qidirish_map_icon} alt={qidirish_map_icon} loading='lazy' className='callicon' /></a>
             <div className="Qidirish_getdata_data">
             <a href={userData.telefon_raqam} type='tel' className='telefonraqam'>{userData.telefon_raqam}</a>
-            <div className="Qidirish_getdata_data_info">
-            <p> {userData.ism}</p>
-            <p>{userData.avto_raqam}</p>
-            </div>
+            <p> {userData.ism}, {userData.avto_raqam}</p>
             </div>
         </div> : <h2>{h2text}</h2>  }
     </div>

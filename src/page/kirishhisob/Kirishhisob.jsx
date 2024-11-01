@@ -3,36 +3,45 @@ import { useLocation } from 'react-router-dom';
 import { supabase } from '../../supabaseClient';
 import './Kirishhisob.css'
 import Carimg from '../../media/car.png'
-import caricon from '../../media/caricon.png'
-import phoneicon from '../../media/phoneicon.png'
-import usernameicon from '../../media/usernameicon.png'
+import qidirish_map_icon from '../../media/qidirish_map_icon.png'
 import Menubar from '../menubar/Menubar';
 
 const Kirishhisob = () => {
+
+
 
     const location = useLocation();
     const { userId } = location.state || {};
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            if (userId) {
-                const { data, error } = await supabase
-                    .from('database')
-                    .select('*')
-                    .eq('id', userId)
-                    .single();
+        const localData = localStorage.getItem("avtovizitkauzmydata");
 
-                if (error) {
-                    console.error('Xato:', error);
-                } else {
-                    setUserData(data);
-                    console.log(data)
+        if (localData) {
+            setUserData(JSON.parse(localStorage.getItem("avtovizitkauzmydata")))
+            console.log("lokal storagedagi malumotlarni olib keldik");
+        }
+        else {
+            const fetchUserData = async () => {
+                if (userId) {
+                    const { data, error } = await supabase
+                        .from('database')
+                        .select('*')
+                        .eq('id', userId)
+                        .single();
+
+                    if (error) {
+                        console.error('Xato:', error);
+                    } else {
+                        setUserData(data);
+                        console.log(data)
+                    }
                 }
-            }
-        };
+            };
 
-        fetchUserData();
+            fetchUserData();
+        }
+
     }, [userId]);
 
 
@@ -41,19 +50,15 @@ const Kirishhisob = () => {
         <div className='Hisob_wrap'>
             <Menubar></Menubar>
             <img src={Carimg} alt={Carimg} loading='lazy' className='Carimg' />
+            <p>Avto raqamingiz bo'yicha ma'umotlari</p>
             {userData ? (
                 <>
-                    <div className="avto_raqam">
-                        <img src={caricon} alt="caricon" />
-                        <h1>{userData.avto_raqam}</h1>
-                    </div>
-                    <div className="telefon_raqam">
-                        <img src={phoneicon} alt="caricon" />
-                        <h1>{userData.telefon_raqam}</h1>
-                    </div>
-                    <div className="username">
-                        <img src={usernameicon} alt="caricon" />
-                        <h1>{userData.ism}</h1>
+                    <div className="Car_info">
+                        <img src={qidirish_map_icon} alt={qidirish_map_icon} loading='lazy' />
+                        <div className="Car_info_data">
+                            <h2>{userData.telefon_raqam}</h2>
+                            <p>{userData.avto_raqam}, {userData.ism}</p>
+                        </div>
                     </div>
                 </>
             ) : (
